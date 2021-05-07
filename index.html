@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head> 
+  <meta charset= "utf-8"/>
+  <title>Odliczanie dni do końca roku kalendarzowego 2021</title>
+  
+  <script type="text/javascript">
+
+function odliczanie()  
+{
+  var dzisiaj = new Date();
+  
+  // aktualna data
+  var dzien = dzisiaj.getDate();
+  var miesiac = dzisiaj.getMonth()+1;
+  var rok = dzisiaj.getFullYear();
+  var milisekundy = dzisiaj.getTime();
+  
+  // data wydarzenia
+    var end = new Date("12/31/2021");
+	var endDzien = end.getDate();
+	var endMiesiac = end.getMonth()+1;
+	var endRok = end.getFullYear();
+	var milisekundy2 = end.getTime();
+	
+	
+	var pozostalo = milisekundy2 - milisekundy;
+	var dni = Math.floor(pozostalo/86400000); 
+
+
+  document.getElementById("aktualnaData").innerHTML = 
+  "Aktualna data: "+dzien+"/"+miesiac+"/"+rok; 
+  document.getElementById("dataWydarzenia").innerHTML = 
+  "Data wydarzenia do końca roku kalendarzowego 2021: "+endDzien+"/"+endMiesiac+"/"+endRok;
+  document.getElementById("dniDoWydarzenia").innerHTML =
+  "Do wydarzenia pozostało: "+ dni;
+  
+}  
+  </script>
+  
+</head>
+<body>  
+
+<div>Program odliczający dni do końca roku kalendarzowego 2021</div>
+	
+	<div id="aktualnaData">...</div> 
+
+	<br/>
+	
+	<div id="dataWydarzenia">...</div>
+<br/>
+<br/>	
+	
+	<div id="dniDoWydarzenia">...</div> 
+	
+	<script type="text/javascript" >
+	odliczanie();
+</script>
+</div>
+</body>
+</html>
